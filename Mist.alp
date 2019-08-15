@@ -171,7 +171,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[new HashMap<>();]]></Code>
+							<Code><![CDATA[new HashMap<>()]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1565809892016</Id>
@@ -1150,9 +1150,6 @@ return out;]]></Body>
 										<Parameter>
 											<Name><![CDATA[id]]></Name>
 										</Parameter>
-										<Parameter>
-											<Name><![CDATA[deleted]]></Name>
-										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -1235,7 +1232,7 @@ return out;]]></Body>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[double value = 1000;
-transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
+transactions.put(agent.id, new Transaction(agent.id, value, time()));]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -1325,6 +1322,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1409,6 +1412,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1495,6 +1504,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1579,6 +1594,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1665,6 +1686,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1749,6 +1776,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1835,6 +1868,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1919,6 +1958,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -2005,6 +2050,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
 						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -2089,6 +2140,12 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[lastBlock]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxRollback]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[transactionsPool]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -2286,7 +2343,7 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 							<ItemName><![CDATA[1412336243165]]></ItemName>
 						</GenericParameterSubstituteReference>
 						<GenericParameterSubstituteValue Class="CodeValue">
-							<Code><![CDATA[Block]]></Code>
+							<Code><![CDATA[BlockIdHolder]]></Code>
 						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
@@ -3298,7 +3355,7 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1000]]></Code>
+							<Code><![CDATA[10000]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1565773363758</Id>
@@ -3333,20 +3390,50 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1565771002038</Id>
-					<Name><![CDATA[lastBlocks]]></Name>
+				<Variable Class="Parameter">
+					<Id>1565863482774</Id>
+					<Name><![CDATA[maxRollback]]></Name>
+					<X>50</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[Color]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1565863482772</Id>
+							<EditorContolType>COLOR_PICKER</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1565865690302</Id>
+					<Name><![CDATA[transactionsPool]]></Name>
 					<X>50</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[UUID]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[HashSet<UUID>]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[new HashSet<>()]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1565865690300</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
 				</Variable>
 			</Variables>
 			<Ports>
@@ -3409,7 +3496,7 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[mist]]></PackageName>
 						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[queue]]></ItemName>
+						<ItemName><![CDATA[pool]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -3425,101 +3512,9 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1565697048214</Id>
-					<Name><![CDATA[connector1]]></Name>
-					<X>50</X><Y>10</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[mist]]></PackageName>
-						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[sink]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Sink]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[mist]]></PackageName>
-						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outF]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>450</X><Y>400</Y></Point>
-						<Point><X>450</X><Y>350</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1565697048216</Id>
-					<Name><![CDATA[connector3]]></Name>
-					<X>50</X><Y>10</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[mist]]></PackageName>
-						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[mist]]></PackageName>
-						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[queue]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Queue]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>440</X><Y>340</Y></Point>
-						<Point><X>390</X><Y>340</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1565697048382</Id>
-					<Name><![CDATA[connector]]></Name>
-					<X>400</X><Y>350</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[mist]]></PackageName>
-						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[queue]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Queue]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetId>1565697048425</TargetId>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>-250</Y></Point>
-						<Point><X>0</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1565808435985</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>730</X><Y>310</Y>
+					<X>690</X><Y>310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3546,7 +3541,7 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -3572,39 +3567,6 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>-210</Y></Point>
 						<Point><X>-240</X><Y>-210</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1565808545889</Id>
-					<Name><![CDATA[connector7]]></Name>
-					<X>580</X><Y>350</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[mist]]></PackageName>
-						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[txForBlock]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Wait]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[mist]]></PackageName>
-						<ClassName><![CDATA[Account]]></ClassName>
-						<ItemName><![CDATA[selectOutput]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[outT]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-70</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -3665,81 +3627,239 @@ transactions.put(agent.id, new Transaction(agent.id, value));]]></Code>
 						<Point><X>-50</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
+				<Connector>
+					<Id>1565865891842</Id>
+					<Name><![CDATA[connector9]]></Name>
+					<X>400</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[pool]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Queue]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetId>1565697048425</TargetId>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-50</X><Y>0</Y></Point>
+						<Point><X>-90</X><Y>0</Y></Point>
+						<Point><X>-90</X><Y>-240</Y></Point>
+						<Point><X>-90</X><Y>-250</Y></Point>
+						<Point><X>140</X><Y>-250</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1565866409491</Id>
+					<Name><![CDATA[connector7]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[sink]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[selectOutput5]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[out1]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>500</X><Y>300</Y></Point>
+						<Point><X>500</X><Y>350</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1565868686820</Id>
+					<Name><![CDATA[connector]]></Name>
+					<X>500</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[selectOutput5]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[out5]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[txForBlock]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Wait]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>-80</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1565868718442</Id>
+					<Name><![CDATA[connector1]]></Name>
+					<X>440</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[pool]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Queue]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[hold]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Hold]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>10</X><Y>0</Y></Point>
+						<Point><X>10</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1565868729954</Id>
+					<Name><![CDATA[connector3]]></Name>
+					<X>480</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[selectOutput5]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[hold]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Hold]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-10</X><Y>0</Y></Point>
+						<Point><X>-10</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1565893880179</Id>
+					<Name><![CDATA[connector10]]></Name>
+					<X>500</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[selectOutput5]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+						<ItemName><![CDATA[out2]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[sink]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>-70</Y></Point>
+						<Point><X>0</X><Y>-70</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1565896828734</Id>
+					<Name><![CDATA[connector11]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[sink1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[mist]]></PackageName>
+						<ClassName><![CDATA[Account]]></ClassName>
+						<ItemName><![CDATA[chainUpdater]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Queue]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>790</X><Y>60</Y></Point>
+						<Point><X>750</X><Y>60</Y></Point>
+					</Points>
+				</Connector>
 			</Connectors>
 			<Functions>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[Block]]></ReturnType>
-					<Id>1565697089359</Id>
-					<Name><![CDATA[getNewBlock]]></Name>
-					<X>50</X><Y>310</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[Block block = new Block();
-block.transactions = new ArrayList<>();
-block.id = UUID.randomUUID();
-block.prevBlockId = lastBlocks.size() == 0 ? null : lastBlocks.getLast().id;
-block.baseTarget = getBaseTargetValue();
-block.time = getBlockTime(block.baseTarget);
-for (UUID id: txQueue) {
-	block.transactions.add(id);
-}
-return block;]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1565771964096</Id>
-					<Name><![CDATA[getBaseTargetValue]]></Name>
-					<X>50</X><Y>370</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[double s0 = 15;
-double avg;
-double tP;
-if (lastBlocks.size() == 0) {
-	avg = s0;
-	tP = 1;
-}
-else {
-	Block prev = lastBlocks.getLast();
-	avg = prev.avgBlockTime;
-	tP = prev.baseTarget;
-}
-double t;
-double factor = 0.765;
-double maxRatio = s0 + factor;
-double minRatio = s0 - factor;
-if (avg > s0) {
-	t = tP * Math.min(avg, maxRatio);
-}
-else {
-	double gamma = 0.64;
-	t = tP * (1 - gamma * (1 - Math.max(avg, minRatio) / s0));
-}
-return t;]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1565771997896</Id>
-					<Name><![CDATA[getBlockTime]]></Name>
-					<X>50</X><Y>400</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[baseTarget]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Body><![CDATA[double add = lastBlocks.size() == 0 ? 0 : lastBlocks.getLast().time;
-return add + Account.getRandomHit() / (baseTarget * stake * getGreedCoeff());]]></Body>
-				</Function>
 				<Function AccessType="public" StaticFunction="true">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 					<ReturnType><![CDATA[int]]></ReturnType>
@@ -3778,7 +3898,7 @@ return add + Account.getRandomHit() / (baseTarget * stake * getGreedCoeff());]]>
 						<Name><![CDATA[block]]></Name>
 						<Type><![CDATA[Block]]></Type>
 					</Parameter>
-					<Body><![CDATA[return Math.max(time() - block.time, 0);]]></Body>
+					<Body><![CDATA[return Math.max(time() - block.getGenerationTime(), 0);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -3791,32 +3911,59 @@ return add + Account.getRandomHit() / (baseTarget * stake * getGreedCoeff());]]>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Parameter>
-						<Name><![CDATA[id]]></Name>
+						<Name><![CDATA[uuid]]></Name>
 						<Type><![CDATA[UUID]]></Type>
 					</Parameter>
-					<Body><![CDATA[Block candidate = main.blocks.get(id);
+					<Body><![CDATA[Block candidate = main.blocks.get(uuid);
+Block last = main.blocks.get(lastBlock);
+//System.out.println("first");
 if (lastBlock == null) {
-	lastBlock = candidate;
+	lastBlock = candidate.getId();
+	for (UUID id: candidate.getTransactions()) {
+		transactionsPool.add(id);
+	}
+	hold.unblock();
+	//System.out.println("second");
 }
-else if (candidate.getDifficulty() > lastBlock.getDifficulty()) {
+else if (candidate.getDifficulty() > last.getDifficulty()) {
+	System.out.println("camehere");
 	Block candidateRollback = candidate;
-	Block accountRollback = lastBlock;
+	Block accountRollback = last;
 	int needRollback = 0;
+	int needAdd = 0;
 	while (candidateRollback.getNumber() > accountRollback.getNumber()) {
 		candidateRollback = main.blocks.get(candidateRollback.getPrevId());
+		needAdd++;
 	}
 	while (accountRollback.getNumber() > candidateRollback.getNumber()) {
 		accountRollback = main.blocks.get(accountRollback.getPrevId());
 		needRollback++;
 		
 	}
-	while (candidateRollback.getId() != accountRollback.getId()) {
+	while (candidateRollback != null && candidateRollback.getId() != accountRollback.getId()) {
 		candidateRollback = main.blocks.get(candidateRollback.getPrevId());
 		accountRollback = main.blocks.get(accountRollback.getPrevId());
 		needRollback++;
+		needAdd++;
 	}
-	lastBlock = candidate;
-}]]></Body>
+	Block current = last;
+	for (int i = 0; i < needRollback; i++) {
+		for (UUID id: current.getTransactions()) {
+			transactionsPool.remove(id);
+		}
+		current = main.blocks.get(current.getPrevId());
+	}
+	current = candidate;
+	for (int i = 0; i < needAdd; i++) {
+		for (UUID id: current.getTransactions()) {
+			transactionsPool.add(id);
+		}
+		current = main.blocks.get(current.getPrevId());
+	}
+	lastBlock = candidate.getId();
+	hold.unblock();
+}
+//System.out.println("third");]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -3859,7 +4006,7 @@ else if (candidate.getDifficulty() > lastBlock.getDifficulty()) {
 			<EmbeddedObjects>
 				<EmbeddedObject>
 					<Id>1565697048192</Id>
-					<Name><![CDATA[queue]]></Name>
+					<Name><![CDATA[pool]]></Name>
 					<X>400</X><Y>330</Y>
 					<Label><X>-5</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4042,6 +4189,7 @@ else if (candidate.getDifficulty() > lastBlock.getDifficulty()) {
 								<Code><![CDATA[txQueue.add(agent.id);
 //System.out.println(self.size());
 if (txQueue.size() == maxCapacity) {
+	hold.block();
 	blockSource.inject();
 }]]></Code>
 							</Value>
@@ -4099,78 +4247,9 @@ if (txQueue.size() == maxCapacity) {
 					</QuantityColumn>
 				</EmbeddedObject>
 				<EmbeddedObject>
-					<Id>1565697048200</Id>
-					<Name><![CDATA[sink]]></Name>
-					<X>500</X><Y>400</Y>
-					<Label><X>-5</X><Y>-20</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Sink]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[Sink]]></ClassName>
-							<ItemName><![CDATA[1412336242929]]></ItemName>
-						</GenericParameterSubstituteReference>
-						<GenericParameterSubstituteValue Class="CodeValue">
-							<Code><![CDATA[TransactionIdHolder]]></Code>
-						</GenericParameterSubstituteValue>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[destroyEntity]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
 					<Id>1565697048204</Id>
 					<Name><![CDATA[blockSource]]></Name>
-					<X>700</X><Y>300</Y>
+					<X>660</X><Y>300</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4273,8 +4352,63 @@ if (txQueue.size() == maxCapacity) {
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[newEntity]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[getNewBlock()]]></Code>
+							<Value Class="EntityCodeValue">
+								<EntityEmbeddedObject>
+									<ActiveObjectClass>
+										<PackageName><![CDATA[mist]]></PackageName>
+										<ClassName><![CDATA[BlockIdHolder]]></ClassName>
+									</ActiveObjectClass>
+									<GenericParameterSubstitute>
+										<GenericParameterSubstituteReference>
+											<PackageName><![CDATA[mist]]></PackageName>
+											<ClassName><![CDATA[BlockIdHolder]]></ClassName>
+											<ItemName><![CDATA[1565809156542]]></ItemName>
+										</GenericParameterSubstituteReference>
+									</GenericParameterSubstitute>
+									<Parameters>
+										<Parameter>
+											<Name><![CDATA[id]]></Name>
+										</Parameter>
+									</Parameters>
+									<ReplicationFlag>true</ReplicationFlag>
+									<Replication Class="CodeValue">
+										<Code><![CDATA[100]]></Code>
+									</Replication>
+									<CollectionType>ARRAY_LIST_BASED</CollectionType>
+									<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+									<XCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</XCode>
+									<YCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</YCode>
+									<ZCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</ZCode>
+									<ColumnCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</ColumnCode>
+									<RowCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</RowCode>
+									<LatitudeCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</LatitudeCode>
+									<LongitudeCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</LongitudeCode>
+									<LocationNameCode Class="CodeValue">
+										<Code><![CDATA[""]]></Code>
+									</LocationNameCode>
+									<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+									<InitializationDatabaseTableQuery>
+										<TableReference>
+										</TableReference>
+									</InitializationDatabaseTableQuery>
+									<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+									<QuantityColumn>
+									</QuantityColumn>
+								</EntityEmbeddedObject>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4316,103 +4450,17 @@ if (txQueue.size() == maxCapacity) {
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[//System.out.println("exit " + agent.id);
+								<Code><![CDATA[System.out.println("prev" + lastBlock);
+Block block = new Block(this, main.blocks.get(lastBlock), time(), main.transactions);
+System.out.println(block.getId());
+agent.id = block.getId();
+main.blocks.put(agent.id, block);
 txQueue.clear();
 txForBlock.freeAll();]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onDiscard]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
-					<Id>1565697048208</Id>
-					<Name><![CDATA[selectOutput]]></Name>
-					<X>480</X><Y>340</Y>
-					<Label><X>-25</X><Y>-20</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[SelectOutput]]></ClassName>
-							<ItemName><![CDATA[1412336242931]]></ItemName>
-						</GenericParameterSubstituteReference>
-						<GenericParameterSubstituteValue Class="CodeValue">
-							<Code><![CDATA[TransactionIdHolder]]></Code>
-						</GenericParameterSubstituteValue>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[conditionIsProbabilistic]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[false]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[!agent.deleted]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onAtEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExitTrue]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExitFalse]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -4483,7 +4531,7 @@ txForBlock.freeAll();]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[Math.max(getBlockDelay(agent), 1);]]></Code>
+								<Code><![CDATA[getBlockDelay(main.blocks.get(agent.id));]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -4492,6 +4540,9 @@ txForBlock.freeAll();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[true]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocation]]></Name>
@@ -4507,10 +4558,6 @@ txForBlock.freeAll();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[Block block = getNewBlock();
-agent.id = block.getId();]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -4579,6 +4626,9 @@ agent.id = block.getId();]]></Code>
 							<ClassName><![CDATA[Queue]]></ClassName>
 							<ItemName><![CDATA[1412336242932]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[BlockIdHolder]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
@@ -4619,6 +4669,9 @@ agent.id = block.getId();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[System.out.println("size " + self.size()); ]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -4737,7 +4790,9 @@ agent.id = block.getId();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[chainUpdate(agent.id);]]></Code>
+								<Code><![CDATA[chainUpdate(agent.id);
+//System.out.println("Updater" + Thread.currentThread().getId());
+//main.getEngine().pause();]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4754,6 +4809,339 @@ agent.id = block.getId();]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1565866095437</Id>
+					<Name><![CDATA[selectOutput5]]></Name>
+					<X>470</X><Y>340</Y>
+					<Label><X>-25</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput5]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[SelectOutput5]]></ClassName>
+							<ItemName><![CDATA[1412336243132]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[type]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.TYPE_CONDITIONS]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition1]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[main.transactions.get(agent.id).hasExpired(time())]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition2]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[transactionsPool.contains(agent.id)]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition3]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition4]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability1]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability2]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability3]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability4]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability5]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[exitNumber]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit1]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit2]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit3]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit4]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit5]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1565866407698</Id>
+					<Name><![CDATA[sink]]></Name>
+					<X>500</X><Y>290</Y>
+					<Label><X>-5</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Sink]]></ClassName>
+							<ItemName><![CDATA[1412336242929]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destroyEntity]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1565868695543</Id>
+					<Name><![CDATA[hold]]></Name>
+					<X>450</X><Y>340</Y>
+					<Label><X>-5</X><Y>-15</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Hold]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Hold]]></ClassName>
+							<ItemName><![CDATA[1412336242940]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[mode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[nEntitiesForSelfBlock]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[initiallyBlocked]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1565896827418</Id>
+					<Name><![CDATA[sink1]]></Name>
+					<X>790</X><Y>50</Y>
+					<Label><X>-5</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Sink]]></ClassName>
+							<ItemName><![CDATA[1412336242929]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destroyEntity]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -4937,33 +5325,12 @@ agent.id = block.getId();]]></Code>
 						<Type><![CDATA[UUID]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[UUID.randomUUID()]]></Code>
+						</DefaultValue>
 						<ParameterEditor>
 							<Id>0</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1565782774249</Id>
-					<Name><![CDATA[deleted]]></Name>
-					<X>50</X><Y>80</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[boolean]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1565782774247</Id>
-							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -5507,7 +5874,7 @@ agent.id = block.getId();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[System.out.println("queue " + agent.id);]]></Code>
+								<Code><![CDATA[//System.out.println("queue " + agent.id);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -5722,7 +6089,7 @@ agent.id = block.getId();]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExitCopy]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.initializeWith(original)]]></Code>
+								<Code><![CDATA[agent.id = original.id;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -6309,16 +6676,23 @@ public class Transaction implements Serializable {
 	 * Его рекомендуется изменить в случае изменения класса
 	 */ 
 	private static final long serialVersionUID = 1L;
+	private static int activeTime = 24 * 60 * 60;
 	private UUID id;
 	private double value;
-	public Transaction(UUID id, double value) {
+	private double time;
+	public Transaction(UUID id, double value, double time) {
 		this.id = id;
 		this.value = value;
+		this.time = time;
 	}
 	
 	public double getCommisionSize() {
 		double cap = 5;
 		return Math.max(0.00025 * value, 5);
+	}
+	
+	public boolean hasExpired(double time) {
+		return time - this.time > activeTime;
 	}
 	
 	public UUID getId() {
@@ -6334,20 +6708,102 @@ public class Transaction implements Serializable {
 			<Text><![CDATA[/**
  * Block
  */
+import java.math.BigInteger;
 import java.util.*;
 public class Block {
 
     /**
      * Конструктор по умолчанию
      */
+    public static final int NUMBER_OF_AVG = 3;
+    private static BigInteger big = BigInteger.valueOf(2).pow(64);
     private UUID id;
+    private List<UUID> transactions;
     private UUID prevId;
-    private double difficulty;
-    private List<Transaction> transactions;
-    private double time;
-    private double avgBlockTime;
-    private double baseTarget;
     private int number;
+    private double[] lastTimes;
+    private double avgNBlocks;
+    private double baseTarget;
+    private double generationTime;
+    private double difficulty;
+
+    public Block(Account account, Block prevBlock, double time, HashMap<UUID, Transaction> allTransactions) {
+        id = UUID.randomUUID();
+        transactions = new ArrayList<>();
+        lastTimes = new double[NUMBER_OF_AVG];
+        difficulty = 0;
+        if (prevBlock == null) {
+            prevId = null;
+            number = 0;
+            for (int i = 0; i < NUMBER_OF_AVG - 1; i++) {
+                lastTimes[i] = -1;
+            }
+            avgNBlocks = -1;
+        }
+        else {
+            prevId = prevBlock.getId();
+            number = prevBlock.getNumber() + 1;
+            double sum = 0;
+            int count = 0;
+            for (int i = 0; i < Block.NUMBER_OF_AVG - 1; i++) {
+                lastTimes[i] = prevBlock.getLastTimes()[i + 1];
+            }
+            for (int i = 0; i < Block.NUMBER_OF_AVG; i++) {
+                if (prevBlock.getLastTimes()[i] != -1) {
+                    sum += prevBlock.getLastTimes()[i];
+                    count++;
+                }
+            }
+            avgNBlocks = sum / count;
+            difficulty += prevBlock.getDifficulty();
+        }
+        baseTarget = getBaseTargetValue(prevBlock);
+        double plusTime = getBlockTime(prevBlock, account);
+        System.out.println("plus " + plusTime);
+        double add = prevBlock == null ? 0 : prevBlock.getGenerationTime();
+        lastTimes[Block.NUMBER_OF_AVG - 1] = plusTime;
+        generationTime  = add + plusTime;
+        difficulty += big.doubleValue() / baseTarget;
+        for (UUID id: account.txQueue) {
+            transactions.add(id);
+            //System.out.println("HH " + allTransactions.get(id).getCommisionSize());
+            difficulty += allTransactions.get(id).getCommisionSize();
+        }
+    }
+
+    private double getBaseTargetValue(Block prevBlock) {
+        double s0 = 15;
+        double avg;
+        double tP;
+        if (avgNBlocks == -1) {
+            avg = s0;
+            tP = 6.1489147e+12;
+        }
+        else {
+        	System.out.println("avg" + avgNBlocks);
+            avg = avgNBlocks;
+            tP = prevBlock.getBaseTarget();
+        }
+        double t;
+        double factor = 0.765;
+        double maxRatio = s0 + factor;
+        double minRatio = s0 - factor;
+        if (avg > s0) {
+            t = tP * Math.min(avg, maxRatio);
+        }
+        else {
+            double gamma = 0.64;
+            t = tP * (1 - gamma * (1 - Math.max(avg, minRatio) / s0));
+        }
+        return t;
+    }
+
+    private double getBlockTime(Block prevBlock, Account account) {
+        BigInteger bigHit = new BigInteger(64, account.random);
+        double hit = bigHit.doubleValue();
+        System.out.println("div " + baseTarget);
+        return hit / (baseTarget * account.stake * account.getGreedCoeff());
+    }
 
     public UUID getId() {
         return id;
@@ -6373,28 +6829,12 @@ public class Block {
         this.difficulty = difficulty;
     }
 
-    public List<Transaction> getTransactions() {
+    public List<UUID> getTransactions() {
         return transactions;
     }
 
-    public void setTransactions(List<Transaction> transactions) {
+    public void setTransactions(List<UUID> transactions) {
         this.transactions = transactions;
-    }
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
-
-    public double getAvgBlockTime() {
-        return avgBlockTime;
-    }
-
-    public void setAvgBlockTime(double avgBlockTime) {
-        this.avgBlockTime = avgBlockTime;
     }
 
     public double getBaseTarget() {
@@ -6411,6 +6851,22 @@ public class Block {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public double getGenerationTime() {
+        return generationTime;
+    }
+
+    public void setGenerationTime(double time) {
+        this.generationTime = time;
+    }
+
+    public double[] getLastTimes() {
+        return lastTimes;
+    }
+
+    public void setLastTimes(double[] times) {
+        this.lastTimes = times;
     }
 }]]></Text>
 		</JavaClass>
